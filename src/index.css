@@ -1,0 +1,17 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  /* background:#1C1F25 !important; */
+  background:#263238 !important;
+  color:#fff !important;
+}
+
+input{
+  border-color: #fff !important;
+  color: #fff !important;
+}
+label{
+  color: #fff!important;
+}
+label[data-shrink=false]+.MuiInputBase-formControl .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
+  outline: 1px solid #1565C0;
+}
