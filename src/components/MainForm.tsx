@@ -2,7 +2,11 @@ import React,{useState} from 'react';
 import {Button,FormControl} from '@mui/material';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+import {useNavigate} from 'react-router-dom';
+import Swal from 'sweetalert2';
 const MainForm: React.FC = () => {
+    const navigate = useNavigate();
+    
     interface User{
         username: string;
         phone: string;
@@ -14,8 +18,10 @@ const MainForm: React.FC = () => {
         const {username,phone,email} = user;
         if(username!='' && phone!=='' && email!== ''){
             localStorage.setItem('user',JSON.stringify(user));
+            navigate('/datagrid')
+
         }else{
-            alert('Please fill all the fields');
+            Swal.fire('Please fill all the fields');
         }
     }
     
