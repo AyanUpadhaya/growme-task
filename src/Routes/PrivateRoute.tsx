@@ -18,7 +18,7 @@ const PrivateRoute: React.FC<RouteProp> = ({ children }) => {
             setUser(JSON.parse(loggedUser))
             setLoading(false)
         }else{
-            Swal.fire('You need to login first')
+            Swal.fire('You must enter details')
             navigate('/')
         }
         

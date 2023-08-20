@@ -1,25 +1,35 @@
 interface SubDepartments{
     name:string
+    isChecked?:boolean
 }
 export interface DepartmentsType{
     department: string;
     sub_departments:SubDepartments[];
+
 }
 
 export const departements:DepartmentsType[] =[
 	{
-        department: "customer_service",
+        department: "Customer Service",
         sub_departments: [
-            {name:"support"},
-            {name:"customer_success"}
+            {name:"Support"},
+            {name:"Customer Success"}
         ]
 	},
 	{
-        department: "design",
+        department: "Design",
         sub_departments: [
-            {name:"graphic_design"},
-            {name:"photo_design"},
-            {name:"web_design"}
+            {name:"Graphic Design"},
+            {name:"Photo Design"},
+            {name:"Web Design"}
+        ]
+	},
+	{
+        department: "Business",
+        sub_departments: [
+            {name:"Application"},
+            {name:"SEO"},
+            {name:"Web Design"}
         ]
 	}
 ]
