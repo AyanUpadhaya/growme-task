@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Navigate,useNavigate } from "react-router-dom";
-
-
+import { useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2';
 
 interface RouteProp {
@@ -24,7 +22,7 @@ const PrivateRoute: React.FC<RouteProp> = ({ children }) => {
             navigate('/')
         }
         
-    }, [])
+    }, [navigate])
 
     if (loading) {
         return <div>Loading...</div>

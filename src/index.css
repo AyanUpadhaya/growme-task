@@ -15,3 +15,7 @@ label{
 label[data-shrink=false]+.MuiInputBase-formControl .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
   outline: 1px solid #1565C0;
 }
+.MuiBox-root .css-jj6133{
+  background-color: #fff !important;
+  color: #263238 !important;
+}
