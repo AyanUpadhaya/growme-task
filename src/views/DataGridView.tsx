@@ -3,6 +3,7 @@ import { Box } from '@mui/material';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
 import { Typography, Container } from "@mui/material";
 import Loader from '../components/Loader';
+import DepartmentsList from '../components/DepartmentsList';
 const DataGridView = () => {
     //posts interface
     interface Posts {
@@ -83,8 +84,11 @@ const DataGridView = () => {
                                 disableRowSelectionOnClick
                             />
                             :
-                            <Loader></Loader>
+                            <Loader/>
                     }
+                </Box>
+                <Box>
+                {posts.length > 0 ?<DepartmentsList/>:<Loader/>}
                 </Box>
             </Container>
 
