@@ -1,14 +1,15 @@
-interface SubDepartments{
-    name:string
-    isChecked?:boolean
+export interface SubDepartments{
+    name:string;
+    isChecked?:boolean;
 }
+ 
 export interface DepartmentsType{
     department: string;
     sub_departments:SubDepartments[];
 
 }
 
-export const departements:DepartmentsType[] =[
+export const departements:DepartmentsType[]=[
 	{
         department: "Customer Service",
         sub_departments: [

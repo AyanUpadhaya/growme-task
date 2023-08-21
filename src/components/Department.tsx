@@ -6,12 +6,13 @@ import Collapse from '@mui/material/Collapse';
 import List from '@mui/material/List';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
-import { DepartmentsType } from '../FakeDB/fakedb.ts';
+import { DepartmentsType, SubDepartments } from '../FakeDB/fakedb.ts';
 
 //for department props type
 interface DepartmentProps {
     department: DepartmentsType;
 }
+
 
 const Department: React.FC<DepartmentProps> = (props) => {
     const [open, setOpen] = React.useState(false);
@@ -20,7 +21,7 @@ const Department: React.FC<DepartmentProps> = (props) => {
     };
     const { department, sub_departments } = props.department;
     //state for managing sub departments
-    const [subDepartMents, setSubDepartMents] = useState<Array<object>>(sub_departments)
+    const [subDepartMents, setSubDepartMents] = useState<SubDepartments[]>(sub_departments.map(subDept => ({ ...subDept, isChecked: false })));
     //handleChange event will cuase check or unchecked
     const handlechange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const { name, checked } = event.target;
@@ -48,10 +49,11 @@ const Department: React.FC<DepartmentProps> = (props) => {
             </ListItemButton>
             <Collapse in={open} timeout="auto" unmountOnExit>
                 <List component="div" disablePadding>
-                    {subDepartMents.map((subDept: object, id: number) => {
+                    {subDepartMents.map((subDept: SubDepartments, id: number) => {
+            
                         return (
                             <ListItemButton key={id} sx={{ pl: 4 }}>
-                                <Checkbox name={subDept?.name} onChange={handlechange} checked={subDept.isChecked || false} />
+                                <Checkbox name={subDept.name} onChange={handlechange} checked={subDept.isChecked || false} />
                                 <ListItemText primary={subDept.name} sx={{ color: 'text.primary' }} />
                             </ListItemButton>
                         )
